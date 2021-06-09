@@ -6,13 +6,22 @@ class Blockchain(object):
         
         self.current_transactions = []
 
-        #self.new_block(previous_hash=1, proof=100)
+        self.new_block(previous_hash=1, proof=100)
 
-    def new_block(self):
+    def new_block(self, proof, previous_hash=None):
 
         #this function creates blocks and adds them to the chain
-        
-        pass
+        '''This method will contain two parameters proof, previous hash'''
+        block = {
+            'index': len(self.chain)+1,
+            'timestamp': time(), #time is CLEARLY not right!
+            'proof': proof,
+            previous_hash: previous_hash or self.hash(self.chain[-1])
+        }
+
+        self.current_transactions = []
+        self.chain.append(block)
+        return block
 
 
     def new_transaction(self):
