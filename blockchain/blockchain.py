@@ -83,4 +83,5 @@ class Blockchain(object):
         return guess_hash[:4] == "0000"
 
 
-
+if __name__ == "__main__":
+    pass
