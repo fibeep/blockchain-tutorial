@@ -13,4 +13,11 @@ contract Adoption {
         return petId; 
     }
 
+    // Getting the adopters
+    function gertAdopters() public view returns (address[16] memory) {
+        return adopters;
+    }
+
+    
+
 }
